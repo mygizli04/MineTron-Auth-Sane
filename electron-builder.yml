@@ -1,0 +1,39 @@
+appId: auth.minetron
+icon: ./app/assets/minetron_trans2.png
+win:
+  artifactName: Minetron.${ext}
+  target:
+    - target: portable
+      arch:
+        - x64
+        - ia32
+mac:
+  artifactName: Minetron.${ext}
+  target:
+    - target: dmg
+      arch:
+        - x64
+linux:
+  artifactName: Minetron.${ext}
+  target:
+    - target: appImage
+      arch:
+        - x64
+        - ia32
+  category: game
+files:
+  - filter:
+      - '**/*'
+      - '!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}'
+      - '!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}'
+      - '!**/node_modules/*.d.ts'
+      - '!**/node_modules/.bin'
+      - '!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}'
+      - '!.editorconfig'
+      - '!**/._*'
+      - '!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}'
+      - '!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}'
+      - '!**/{appveyor.yml,.travis.yml,circle.yml}'
+      - '!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}'
+      - '!*.env'
+      - '!dev-app-update.yml'

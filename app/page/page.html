@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<link rel="stylesheet" href="page.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<title>MineTron-Auth</title>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="center">
+			<img class="icon" src="../assets/minetron.png" width=250 height=250>
+			<br>
+			<p class="text">Your Auth Code is</p>
+			<h2 class="text" id="uuid">Loading...</h3>
+			<button id="button" class="btn-1">Close</button>
+		</div>
+		<script>
+			const { ipcRenderer } = require('electron')
+			var uuid;
+			
+
+			const remote = require('@electron/remote')
+			const app = remote.app
+			document.getElementById("button").addEventListener("click", () => {
+				app.exit()
+			})
+
+			setInterval(function() {
+				let render = ipcRenderer.sendSync('synchronous-message', 'uuid')
+				if (document.getElementById("uuid").innerHTML != render) document.getElementById("uuid").innerHTML = render
+			}, 1000);
+		</script>
+	</body>
+
+</html>
