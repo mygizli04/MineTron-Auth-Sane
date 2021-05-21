@@ -27,10 +27,7 @@ function main(){
 			enableRemoteModule: true,
 			contextIsolation: false
 
-        },
-		resizable: false,
-		frame: false,
-	  })
+        })
 	
 	  win.on('closed', () => app.quit())
 	  const localShortcut = require('electron-localshortcut')
