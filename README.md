@@ -1,6 +1,6 @@
 # How do i use this with (insert service)
 
-Install the MineTron-auth Client and login into minehut the copy the auth code we give you and give it to the service
+Install the MineTron-auth Client and login into minehut then copy the auth code we give you and give it to the service
 
 
 
